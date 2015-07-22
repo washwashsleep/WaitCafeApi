@@ -1,6 +1,6 @@
 
 module.exports = {
     db: {
-        url: 'mongodb://localhost:27017'
+        url: 'mongodb://localhost:27017/WaitCafe'
     }
 };
