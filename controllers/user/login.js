@@ -3,7 +3,7 @@ var _ = require('lodash');
 
 module.exports = function(req, res, next) {
 
-    var options = _.pick(req.body, 'name', 'password');
+    var options = _.pick(req.body, 'name', 'password', 'email', 'phone');
 
     if(!options.name){
         console.log('登入，缺少 name');
@@ -15,9 +15,21 @@ module.exports = function(req, res, next) {
         return next(new Error('登入，缺少 password'));
     }
 
+    if(!options.email){
+        console.log('登入，缺少 email');
+        return next(new Error('登入，缺少 email'));
+    }
+
+    if(!options.phone){
+        console.log('登入，缺少 phone');
+        return next(new Error('登入，缺少 phone'));
+    }
+
     return models.user.findOne()
-        .where('email').equals(options.name)
-        .where('password').equals(options.password)
+        .where('name').equals(options.name)
+        .where('password').equals(libs.hash(options.password))
+        .where('email').equals(options.email)
+        .where('phone').equals(options.phone)
         .execAsync()
         .then(function(user) {
 
