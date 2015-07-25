@@ -2,8 +2,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
-// var cookieSession = require('cookie-session');
-var session = require('express-session');
+var session = require('cookie-session');
+// var session = require('express-session');
 
 var apiBinding = require('./apiBinding');
 
@@ -23,9 +23,15 @@ module.exports = function(app) {
     //   keys: ['key1', 'key2']
     // }));
 
+    // app.use(session({
+    //   secret: 'keyboard cat',
+    //   cookie: {}
+    // }));
+
     app.use(session({
       secret: 'keyboard cat',
-      cookie: {}
+      key: 'sid',
+      cookie: { secure: false }
     }));
 
     /*

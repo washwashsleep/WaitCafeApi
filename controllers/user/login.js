@@ -33,6 +33,7 @@ module.exports = function(req, res, next) {
             }
 
             req.session.User = user;
+            console.log(req.session);
 
             return res.api(user);
         })
