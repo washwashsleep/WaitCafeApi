@@ -32,6 +32,24 @@ var schema = new Schema({
     phone: {
         type: String,
         required: true
+    },
+
+    // 創造時間
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+
+    // 更新時間
+    updatedAt: {
+        type: Date,
+        default: Date.now
+    },
+
+    // 是否刪除
+    trashed: {
+        type: Boolean,
+        default: false
     }
 });
 

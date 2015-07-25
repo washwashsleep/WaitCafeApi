@@ -16,6 +16,7 @@
     "lodash": "^3.10.0",
     "mongoose": "^4.0.7",
     "morgan": "^1.6.1",
+    "request-promise": "^0.4.2",
     "sha1": "^1.1.1"
   }
 }
