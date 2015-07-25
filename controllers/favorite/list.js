@@ -3,8 +3,6 @@ module.exports = function(req, res, next) {
 
     var data = req.query;
 
-    console.log(req.session);
-
     return models.favorite.find()
         .where('createdBy').equals(data.userId)
         .execAsync()

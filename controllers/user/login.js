@@ -21,9 +21,6 @@ module.exports = function(req, res, next) {
         .execAsync()
         .then(function(user) {
 
-            console.log(user);
-            console.log(req.session);
-
             if(!user){
                 return Promise.reject(new Error('warn! 找不到帳號，請註冊'));
             }
@@ -31,9 +28,6 @@ module.exports = function(req, res, next) {
             if(req.session && req.session.User && (req.session.User.email === user.email)){
                 return Promise.reject(new Error('你已經登入了唷啾咪'));
             }
-
-            req.session.User = user;
-            console.log(req.session);
 
             return res.api(user);
         })
