@@ -5,6 +5,7 @@ var router = express.Router();
 
 // var Recommend = require('./recommend');
 var Create = require('./create');
+var Update = require('./update');
 // var List = require('./list');
 
 var noop = function(req, res, next) {
@@ -13,6 +14,9 @@ var noop = function(req, res, next) {
 
 router.route('/activity')
     .post(Create);
+
+router.route('/activity/:activityId')
+    .put(Update);
 
 // router.route('/favorite/recommend')
 //     .get(Recommend);
