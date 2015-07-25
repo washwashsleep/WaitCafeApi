@@ -97,6 +97,7 @@
       "Models": false,
       "Debug": false,
       "expect": false,
-      "Config": false
+      "Config": false,
+      "libs": false
   }
 }
