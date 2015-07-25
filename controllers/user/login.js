@@ -21,6 +21,9 @@ module.exports = function(req, res, next) {
         .execAsync()
         .then(function(user) {
 
+            console.log(user);
+            console.log(req.session);
+
             if(!user){
                 return Promise.reject(new Error('warn! 找不到帳號，請註冊'));
             }
