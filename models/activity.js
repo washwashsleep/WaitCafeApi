@@ -50,7 +50,6 @@ var schema = new Schema({
     // 活動的接收者
     receiver: {
         type: Schema.Types.ObjectId,
-        required: true,
         ref: 'user'
     },
 
