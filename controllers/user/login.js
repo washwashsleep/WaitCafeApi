@@ -25,6 +25,10 @@ module.exports = function(req, res, next) {
                 return Promise.reject(new Error('warn! 找不到帳號，請註冊'));
             }
 
+            if(req.session && req.session.User && (req.session.User.email === user.email)){
+                return Promise.reject(new Error('你已經登入了唷啾咪'));
+            }
+
             req.session.User = user;
 
             return res.api(user);
