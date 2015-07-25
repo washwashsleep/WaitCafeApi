@@ -1,21 +1,28 @@
 
 module.exports = function(req, res, next) {
     var data = req.body;
-    return models.favorite.createAsync({
-        location: {
-            id: data.id,
-            name: data.name,
-            category: data.category,
-            latitude: data.latitude,
-            longitude: data.longitude,
-            checkins: data.checkins,
-            checkins_upcount: data.checkins_upcount,
-            startdate: data.startdate
-        },
-        createdBy: data.userId
+
+    Promise.map(data.locations, function(location){
+
+        return models.favorite.findOne()
+            .where('location.id').equals(location.id)
+            .where('trashed').equals(false)
+            .where('createdBy').equals(data.userId)
+            .execAsync()
+            .then(function(doc) {
+
+                if(doc){
+                    return Promise.resolve(doc);
+                }
+
+                return models.favorite.createAsync({
+                    location: location,
+                    createdBy: data.userId
+                });
+            });
     })
-    .then(function(favorite) {
-        return res.api(favorite);
+    .then(function(favorites) {
+        return res.api(favorites);
     })
     .catch(next);
 };
