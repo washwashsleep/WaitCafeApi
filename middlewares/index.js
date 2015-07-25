@@ -24,7 +24,8 @@ module.exports = function(app) {
     // }));
 
     app.use(session({
-      secret: 'keyboard cat'
+      secret: 'keyboard cat',
+      cookie: {}
     }));
 
     /*
