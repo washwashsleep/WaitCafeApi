@@ -2,5 +2,6 @@
 require('./setting');
 
 module.exports = {
-    user: require('./user')
+    user: require('./user'),
+    favorite: require('./favorite')
 };
