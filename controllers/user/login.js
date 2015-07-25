@@ -25,7 +25,7 @@ module.exports = function(req, res, next) {
                 return Promise.reject(new Error('warn! 找不到帳號，請註冊'));
             }
 
-            req.User = user;
+            req.session.User = user;
 
             return res.api(user);
         })

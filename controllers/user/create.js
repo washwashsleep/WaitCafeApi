@@ -12,6 +12,8 @@ module.exports = function(req, res, next) {
     })
     .then(function(newUser) {
 
+        req.session.User = newUser;
+
         return res.api(newUser);
     })
     .catch(next);
