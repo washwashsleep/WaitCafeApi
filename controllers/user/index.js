@@ -3,6 +3,7 @@ var router = express.Router();
 
 var Test = require('./test');
 var Create = require('./create');
+var Login = require('./login');
 
 var noop = function(req, res, next) {
     res.status(200).send();
@@ -11,6 +12,9 @@ var noop = function(req, res, next) {
 router.route('/user')
     .get(Test)
     .post(Create);
+
+router.route('/user/login')
+    .post(Login);
 
 
 
