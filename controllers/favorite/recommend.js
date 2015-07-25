@@ -3,7 +3,7 @@ var request = require('request-promise');
 
 let apiUrl = 'http://api.ser.ideas.iii.org.tw:80/api/fb_checkin_search';
 
-let token = '500d4189a2583a9725ce84ed29fe04ca';
+let token = '488d28509482c5a49996b509065a2d67';
 
 module.exports = function(req, res, next) {
 
