@@ -3,7 +3,7 @@ Wait Cafe Api Server
 
 ## 在開始之前
 
-你的電腦應該要安裝好 Node.js 與 MongoDB
+你的電腦應該要安裝好 Node.js 與 MongoDB !
 
 ## 啟動 Server
 
