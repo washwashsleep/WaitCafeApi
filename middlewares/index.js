@@ -1,6 +1,7 @@
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var morgan = require('morgan');
 
 var apiBinding = require('./apiBinding');
 
@@ -9,6 +10,7 @@ module.exports = function(app) {
     /*
      * 一些套件的設定
      */
+    app.use(morgan('dev'));
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
