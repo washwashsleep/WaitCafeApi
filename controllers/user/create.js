@@ -1,6 +1,4 @@
 
-let KEY = '.washwashsleep';
-
 module.exports = function(req, res, next) {
 
     // return models.user.createAsync({
@@ -18,5 +16,11 @@ module.exports = function(req, res, next) {
     // })
     // .catch(next);
 
-    return res.api(req.body);
+    // console.log(libs);
+
+    // console.log(libs.hash('aaaaa'));
+
+    return res.api(libs.hash(req.body.password));
+
+    // return res.api(req.body);
 };
