@@ -14,3 +14,5 @@ Wait Cafe Api Server
   - 目前綁定在全域變數(global)有幾樣東西，在程式中可以隨意呼叫。
     - model: 所有的 model
     - Promise: bluebird
+
+# TEST
