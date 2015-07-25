@@ -10,9 +10,21 @@ var schema = new Schema({
         required: true
     },
 
+    // 使用者的密碼
+    password: {
+        type: String,
+        required: true
+    },
+
     // 使用者的 email
     email: {
         type: String
+    },
+
+    // 使用者的性別
+    gender: {
+        type: String,
+        enum: ['BOY', 'GIRL', 'NONE']
     }
 });
 

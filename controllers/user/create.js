@@ -1,10 +1,12 @@
 
+let KEY = '.washwashsleep';
 
 module.exports = function(req, res, next) {
 
     return models.user.createAsync({
         name: req.body.name,
-        email: req.body.email
+        email: req.body.email,
+        password: req.body.password + KEY
     })
     .then(function(newUser) {
 
