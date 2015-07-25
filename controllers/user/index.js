@@ -9,8 +9,8 @@ var noop = function(req, res, next) {
 };
 
 router.route('/user')
-  .get(Test)
-  .post(Create);
+    .get(Test)
+    .post(Create);
 
 
 
