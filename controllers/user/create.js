@@ -9,7 +9,7 @@ module.exports = function(req, res, next) {
         .then(function(user) {
 
             if (user) {
-                return Promise.reject('這個 email 已經註冊過了');
+                return Promise.reject(new Error('這個 email 已經註冊過了'));
             }
 
             return models.user.createAsync({
