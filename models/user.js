@@ -24,8 +24,7 @@ var schema = new Schema({
 
     // 使用者的性別
     gender: {
-        type: String,
-        enum: ['BOY', 'GIRL', 'NONE']
+        type: String
     },
 
     // 使用者的電話
