@@ -8,7 +8,7 @@ module.exports = function(app) {
 
         var errObject = {
             message: err.message,
-            stack: err.stack.split('\n')
+            // stack: err.stack.split('\n')
         };
 
         return res.api(errObject);
