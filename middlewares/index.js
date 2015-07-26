@@ -2,7 +2,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
-var session = require('cookie-session');
+// var session = require('cookie-session');
 // var session = require('express-session');
 
 var apiBinding = require('./apiBinding');
@@ -28,11 +28,11 @@ module.exports = function(app) {
     //   cookie: {}
     // }));
 
-    app.use(session({
-      secret: 'keyboard cat',
-      key: 'sid',
-      cookie: { secure: false }
-    }));
+    // app.use(session({
+    //   secret: 'keyboard cat',
+    //   key: 'sid',
+    //   cookie: { secure: false }
+    // }));
 
     /*
      * 加入一個新的 res method，叫做 res.api，回傳 json 全部都用 res.api({});
