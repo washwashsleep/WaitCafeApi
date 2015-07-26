@@ -11,6 +11,8 @@ module.exports = function(app) {
             stack: err.stack.split('\n')
         };
 
+        console.log('error', errObject);
+
         return res.api(errObject);
     });
 
